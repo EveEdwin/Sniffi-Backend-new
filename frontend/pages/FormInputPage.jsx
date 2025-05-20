@@ -17,16 +17,16 @@ const FormInputPage = () => {
 
 const handleSubmit = async (e) => {
   e.preventDefault();
+  console.log("Submitting:", benefits); // <-- Check format here
   try {
-    const response = await createFeatures(benefits); 
-    setFormData(benefits);
+    const response = await createFeatures(benefits);
   } catch (error) {
+    console.error("Submission failed:", error);
   }
 };
 
 
-
-  return (
+return (
     <div className="max-w-4xl mx-auto p-4">
       <form onSubmit={handleSubmit} className="space-y-6">
         {benefits.map((b, idx) => (
